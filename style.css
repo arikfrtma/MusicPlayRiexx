@@ -1,0 +1,69 @@
+/* Shared styles (login + app) */
+:root{
+  --bg:#000;
+  --panel:#0b0b0b;
+  --accent:#6a4cff; /* purple gradient primary for login */
+  --accent2:#00e5e5; /* neon for app highlights */
+  --muted:#9aa0a6;
+  --radius:12px;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#fff}
+
+/* ---------- Login page ---------- */
+.login-body{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;background:
+  radial-gradient(600px 300px at 10% 10%, rgba(106,76,255,0.12), transparent 10%),
+  radial-gradient(500px 250px at 90% 90%, rgba(0,229,229,0.06), transparent 10%),
+  #fff;
+  background-blend-mode:overlay;
+}
+.login-left-deco{
+  position:fixed;left:0;top:0;width:50%;height:100%;background:linear-gradient(180deg,var(--accent),#5b3bff);border-bottom-right-radius:200px;z-index:0;
+  box-shadow: 0 30px 60px rgba(106,76,255,0.12);
+}
+.login-card{
+  width:360px;z-index:2;background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);padding:22px;border-radius:26px;box-shadow:0 20px 60px rgba(0,0,0,0.2);
+  color:#222;
+}
+.login-inner{display:flex;flex-direction:column;gap:8px}
+.login-brand{margin:0;font-size:20px;color:var(--accent);text-align:center}
+.login-sub{margin:0;text-align:center;color:#666;font-size:13px}
+.form .field{margin-top:8px}
+.icon-field{display:flex;align-items:center;gap:8px;background:#fff;padding:6px;border-radius:30px;border:1px solid rgba(0,0,0,0.04)}
+.icon-field .icon{width:44px;height:44px;border-radius:22px;background:linear-gradient(90deg,var(--accent),#8f7bff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+.icon-field input{flex:1;border:none;background:transparent;outline:none;padding:10px;font-size:14px;color:#222}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#8f7bff);color:#fff;border:none;padding:12px;border-radius:30px;font-weight:700;cursor:pointer}
+.btn-google{background:#fff;border:1px solid #eee;padding:10px;border-radius:10px;color:#333;cursor:pointer}
+.btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:10px;border-radius:10px;color:#333;cursor:pointer}
+.divider{text-align:center;margin:12px 0;color:#888}
+.register-box{margin-top:10px;background:#fafafa;padding:10px;border-radius:10px}
+
+/* Links & small text */
+.small{font-size:13px}
+.muted{color:#666}
+.link{color:var(--accent);text-decoration:none;}
+
+/* ---------- App (after login) ---------- */
+.topbar{height:68px;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.brand-left{display:flex;gap:12px;align-items:center}
+.logo-sm{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),#007f7f);display:flex;align-items:center;justify-content:center;color:#000;font-weight:800}
+.app-title{font-weight:800}
+.top-right{display:flex;gap:8px;align-items:center}
+.btn-icon{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:var(--muted)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:var(--muted);cursor:pointer}
+.container-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;padding:18px;flex:1}
+.panel{background:var(--panel);border-radius:14px;padding:14px;border:1px solid var(--glass)}
+.player-iframe{width:100%;height:320px;border-radius:10px;border:none;background:#000}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.input-row{display:flex;gap:8px;margin-top:8px}
+.input-row input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:#0d0d0d;color:#fff}
+.now-title{font-weight:800;color:var(--accent2)}
+.small.muted{color:var(--muted)}
+.footer{text-align:center;padding:12px;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+
+@media(max-width:1000px){
+  .container-grid{grid-template-columns:1fr}
+  .login-card{width:92%}
+}
